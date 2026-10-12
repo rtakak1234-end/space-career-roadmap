@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101936">
+<title>宇宙ミッションラボ | きみの宇宙飛行士ロードマップ</title>
+<style>
+:root{--bg:#0b1025;--panel:#151e3c;--panel2:#1b2850;--ink:#f5f7ff;--muted:#b8c4e8;--gold:#ffd166;--cyan:#73e0f2;--pink:#ff9ecb;--green:#8be3b0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1c2b59 0,#0b1025 58%);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.65}button{font:inherit;cursor:pointer}.wrap{max-width:1050px;margin:auto;padding:20px}.hero{padding:28px 0 18px}.eyebrow{color:var(--cyan);font-weight:800;letter-spacing:.12em;font-size:.82rem}.hero h1{font-size:clamp(2rem,6vw,3.7rem);line-height:1.12;margin:.4rem 0}.hero p{color:var(--muted);max-width:650px}.orbit{display:inline-block;font-size:2rem;animation:float 4s ease-in-out infinite}@keyframes float{50%{transform:translateY(-7px) rotate(8deg)}}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 28px}.stat,.panel,.mission,.path-card{background:linear-gradient(145deg,var(--panel),#111932);border:1px solid #2d3c68;border-radius:18px;padding:17px}.stat strong{display:block;font-size:1.7rem;color:var(--gold)}.stat span{font-size:.85rem;color:var(--muted)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:30px 0 12px}.section-head h2{margin:0;font-size:1.45rem}.section-head p{margin:0;color:var(--muted);font-size:.9rem}.missions{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.mission{display:flex;flex-direction:column;gap:8px}.mission .emoji{font-size:2rem}.mission h3{margin:0;font-size:1.1rem}.mission p{margin:0;color:var(--muted);font-size:.92rem;flex:1}.tag{display:inline-block;border-radius:999px;background:#26345e;color:var(--cyan);padding:3px 10px;font-size:.75rem;font-weight:750;width:max-content}.btn{border:0;border-radius:12px;padding:11px 15px;font-weight:800;background:var(--gold);color:#202342;transition:transform .15s}.btn:hover{transform:translateY(-2px)}.btn.secondary{background:#26345e;color:var(--ink);border:1px solid #3a4b7b}.btn:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}.mission.done{border-color:#4dbe91;background:linear-gradient(145deg,#173c43,#13203a)}.mission.done .tag{background:#1d594d;color:#a5ffd7}.quizbox{display:grid;grid-template-columns:1fr 1fr;gap:18px}.quiz-question{font-size:1.12rem;font-weight:800}.answers{display:grid;gap:9px;margin:12px 0}.answer{background:#202d53;color:var(--ink);border:1px solid #3a4b7b;border-radius:12px;text-align:left;padding:12px}.answer:hover{border-color:var(--cyan)}.answer:disabled{cursor:default;opacity:.85}.feedback{min-height:2rem;color:var(--green);font-weight:700}.progress{height:12px;background:#293456;border-radius:999px;overflow:hidden;margin:12px 0}.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--green));transition:width .3s}.path{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.path-card{text-align:center;padding:15px 10px}.path-card b{display:block;color:var(--gold)}.path-card span{font-size:.84rem;color:var(--muted)}.note{color:var(--muted);font-size:.9rem}.footer{border-top:1px solid #2d3c68;margin-top:32px;padding:22px 0;color:var(--muted);font-size:.85rem}.reset{margin-top:8px;color:#ffb8c9;text-decoration:underline;background:none;border:0;padding:6px}.hidden{display:none}@media(max-width:760px){.missions{grid-template-columns:1fr}.quizbox{grid-template-columns:1fr}.path{grid-template-columns:repeat(2,1fr)}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:1.35rem}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero">
+<div class="eyebrow">SPACE EXPLORER • LEVEL 4</div>
+<div class="orbit" aria-hidden="true">🚀　🌌　🪐</div>
+<h1>宇宙ミッションラボ</h1>
+<p>きみは宇宙飛行士をめざす見習いクルー！ 算数・科学・英語・からだを使ったミッションにチャレンジして、宇宙への道を少しずつ進もう。</p>
+</header>
+<section class="stats" aria-label="きみの記録">
+<div class="stat"><strong id="points">0 XP</strong><span>ミッションポイント</span></div>
+<div class="stat"><strong id="completed">0 / 6</strong><span>今日のミッション</span></div>
+<div class="stat"><strong id="streak">🌟 0</strong><span>連続チャレンジ日数（自己記録）</span></div>
+</section>
+<section>
+<div class="section-head"><h2>🛰️ 今日のミッション</h2><p>できるものから、ひとつずつ！</p></div>
+<div class="missions" id="missions">
+<article class="mission" data-id="math"><div class="emoji">🧮</div><span class="tag">算数</span><h3>月面基地の食料計算</h3><p>宇宙飛行士4人が、1日に水を1人3リットル使います。3日分では何リットル必要？ 紙に式を書いて考えよう。</p><button class="btn" data-complete="math">ミッション完了！</button></article>
+<article class="mission" data-id="space"><div class="emoji">🌑</div><span class="tag">宇宙科学</span><h3>月のひみつを調べる</h3><p>月はどうして形が変わって見えるのかな？ 本や信頼できる子ども向けサイトで調べ、ひとことメモしよう。</p><button class="btn" data-complete="space">ミッション完了！</button></article>
+<article class="mission" data-id="english"><div class="emoji">🔤</div><span class="tag">英語</span><h3>宇宙の英単語3つ</h3><p>star（星）、Moon（月）、Earth（地球）を声に出して読もう。できたらノートに絵も描いてみよう。</p><button class="btn" data-complete="english">ミッション完了！</button></article>
+<article class="mission" data-id="body"><div class="emoji">🤸</div><span class="tag">からだ</span><h3>宇宙飛行士ストレッチ</h3><p>安全な場所で、肩まわし・片足立ち・ゆっくり深呼吸。無理せず、自分のペースで3分動こう。</p><button class="btn" data-complete="body">ミッション完了！</button></article>
+<article class="mission" data-id="read"><div class="emoji">📚</div><span class="tag">読書</span><h3>宇宙の「なぜ？」を1つ</h3><p>宇宙の本を5〜10分読んで、「なぜ？」と思ったことをひとつ書こう。答えはあとで調べてもOK。</p><button class="btn" data-complete="read">ミッション完了！</button></article>
+<article class="mission" data-id="create"><div class="emoji">🛠️</div><span class="tag">発明</span><h3>月面基地を設計しよう</h3><p>紙に月面基地の絵を描こう。寝る場所・水・電気・宇宙服をどこに置く？ 理由も考えてみよう。</p><button class="btn" data-complete="create">ミッション完了！</button></article>
+</div>
+</section>
+<section>
+<div class="section-head"><h2>🧠 3問クイッククイズ</h2><p>まちがえてもOK。考えたことが力になる！</p></div>
+<div class="panel quizbox">
+<div><div class="tag" id="quiz-count">QUESTION 1 / 3</div><p class="quiz-question" id="question">地球のまわりを回っている、地球の衛星はどれ？</p><div class="answers" id="answers"><button class="answer" data-answer="0">火星</button><button class="answer" data-answer="1">月</button><button class="answer" data-answer="2">太陽</button></div><div class="feedback" id="feedback" aria-live="polite"></div><button class="btn secondary hidden" id="next">次の問題へ →</button></div>
+<div><div style="font-size:3rem" aria-hidden="true">🧑‍🚀</div><h3>クルーからのヒント</h3><p class="note" id="hint">月は地球のまわりを回っているよ。地球の「衛星」なんだ。</p><div class="progress" aria-label="クイズの進み具合"><div id="quiz-progress"></div></div><p class="note">クイズは全部で3問。正解するとポイントがもらえるよ。</p></div>
+</div>
+</section>
+<section>
+<div class="section-head"><h2>🗺️ 宇宙飛行士へのロードマップ</h2><p>今は土台づくりの時期！</p></div>
+<div class="path">
+<div class="path-card">🌱<b>小4〜小6</b><span>算数・理科を楽しむ<br>「なぜ？」を集める</span></div>
+<div class="path-card">🧭<b>中学生</b><span>英語・数学・理科<br>チーム活動に挑戦</span></div>
+<div class="path-card">🔭<b>高校〜大学</b><span>得意分野を深める<br>研究やものづくり</span></div>
+<div class="path-card">🚀<b>その先</b><span>募集要項を確認し<br>必要な力を伸ばす</span></div>
+</div>
+<p class="note">宇宙飛行士への道はひとつではないよ。今は将来を決めきらず、好きなことを広げよう。休息・遊び・友だちとの時間も大切なミッション！</p>
+</section>
+<footer class="footer">
+<p>このアプリは学習のきっかけを作るためのものです。記録はこの端末のブラウザ内に保存されます（localStorage）。共有端末では保護者と一緒に使ってね。</p>
+<button class="reset" id="reset">記録をリセットする</button>
+</footer>
+</main>
+<script>
+const KEY='space-mission-lab-v1';
+const initial=()=>({done:[],xp:0,quizDone:false,quizScore:0,streak:0,lastDate:''});
+let state;
+try{state={...initial(),...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){state=initial()}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){};renderStats()};
+function renderStats(){document.getElementById('points').textContent=state.xp+' XP';document.getElementById('completed').textContent=state.done.length+' / 6';document.getElementById('streak').textContent='🌟 '+state.streak;document.querySelectorAll('[data-complete]').forEach(b=>{const done=state.done.includes(b.dataset.complete);b.textContent=done?'✓ 完了！':'ミッション完了！';b.disabled=done;b.closest('.mission').classList.toggle('done',done)})}
+document.querySelectorAll('[data-complete]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.complete;if(state.done.includes(id))return;state.done.push(id);state.xp+=10;save()}));
+const qs=[
+{q:'地球のまわりを回っている、地球の衛星はどれ？',a:['火星','月','太陽'],correct:1,hint:'月は地球のまわりを回っているよ。地球の「衛星」なんだ。',why:'正解！ 月は地球の自然の衛星だよ。'},
+{q:'宇宙服を着る大切な理由はどれ？',a:['宇宙で呼吸したり体を守ったりするため','速く走るため','星を明るくするため'],correct:0,hint:'宇宙空間には、地上のように呼吸できる空気がないよ。',why:'その通り！ 宇宙服は酸素を供給し、体を守る役目があるよ。'},
+{q:'水を1人3リットル使う人が4人。1日分の水は？',a:['7リットル','12リットル','16リットル'],correct:1,hint:'3リットルを4人分。3 × 4 で考えよう。',why:'正解！ 3 × 4 = 12リットル。算数は宇宙でも大活躍！'}
+];
+let qi=0,answered=false,score=0;
+const $=id=>document.getElementById(id);
+function renderQ(){const q=qs[qi];$('quiz-count').textContent='QUESTION '+(qi+1)+' / '+qs.length;$('question').textContent=q.q;$('hint').textContent=q.hint;$('feedback').textContent='';$('next').classList.add('hidden');$('answers').innerHTML='';q.a.forEach((a,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=a;b.addEventListener('click',()=>answer(i));$('answers').appendChild(b)});$('quiz-progress').style.width=(qi/qs.length*100)+'%';answered=false}
+function answer(i){if(answered)return;answered=true;const q=qs[qi];[...$('answers').children].forEach((b,j)=>{b.disabled=true;if(j===q.correct)b.style.borderColor='#8be3b0'});if(i===q.correct){score++;$('feedback').textContent=q.why}else{$('feedback').textContent='おしい！ '+q.why.replace('正解！ ','').replace('その通り！ ','')} $('quiz-progress').style.width=((qi+1)/qs.length*100)+'%';$('next').classList.remove('hidden');$('next').textContent=qi===qs.length-1?'結果を見る ★':'次の問題へ →'}
+$('next').addEventListener('click',()=>{if(qi<qs.length-1){qi++;renderQ()}else{if(!state.quizDone){state.xp+=score*5;state.quizDone=true;state.quizScore=score;save()}$('quiz-count').textContent='MISSION COMPLETE';$('question').textContent='クイズ終了！ '+score+' / '+qs.length+' 問正解';$('answers').innerHTML='';$('feedback').textContent=state.quizDone?'チャレンジありがとう！ ポイントは記録されたよ。':'チャレンジありがとう！';$('hint').textContent='もう一度やりたいときは、ページを再読み込みしてね。';$('next').classList.add('hidden');$('quiz-progress').style.width='100%'}});
+$('reset').addEventListener('click',()=>{if(confirm('これまでのポイントと完了記録を消しますか？')){state=initial();try{localStorage.removeItem(KEY)}catch(e){};qi=0;score=0;renderStats();renderQ()}});
+renderStats();renderQ();
+</script>
+</body>
+</html>
